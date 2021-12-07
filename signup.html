@@ -44,23 +44,23 @@
 
 
     <!-- Custom styles for this template -->
-    <link href="styles.css" rel="stylesheet">
+    <link href="css/styles.css" rel="stylesheet">
   </head>
+
+
   <body class="text-center">
+    <form action="/" class="form-signin" method="POST">
+      <img class="mb-4" src="images/signup.png" alt="" width="72" height="72">
+      <h1 class="h3 mb-3 fw-normal">Signup to My Newsletter</h1>
 
-<main class="form-signin">
-  <form>
-    <img class="mb-4" src="image/signup.png" alt="" width="72" height="72">
-    <h1 class="h3 mb-3 fw-normal">Signup to My Newsletter</h1>
+      <input type="text" name="fName" class="form-control top" placeholder="First Name" required autofocus>
+      <input type="text" name="lName" class="form-control middle" placeholder="Last Name" required>
+      <input type="email" name="email" class="form-control bottom" placeholder="Email" required>
 
-    <input type="text" class="form-control top" placeholder="First Name" required autofocus>
-    <input type="text" class="form-control middle" placeholder="Last Name" required>
-    <input type="email" class="form-control bottom" placeholder="Email" required>
+      <button class="w-100 btn btn-lg btn-primary" type="submit">Sign Up!</button>
+      <p class="mt-5 mb-3 text-muted">&copy; JesseMeirink.com</p>
+    </form>
 
-    <button class="w-100 btn btn-lg btn-primary" type="submit">Sign Up!</button>
-    <p class="mt-5 mb-3 text-muted">&copy; JesseMeirink.com</p>
-  </form>
-</main>
 
 
   </body>
