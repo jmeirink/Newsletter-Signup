@@ -37,23 +37,35 @@ app.post("/", function(req, res){
 
 
 // Might need to replace <dc> with us20
-  const url = "https://<dc>.api.mailchimp.com/3.0/lists/f238cb0a12"
+  const url = "https://us20.api.mailchimp.com/3.0/lists/f238cb0a12"
 
   const options = {
     method: "POST",
     auth: "jmeirink1:d3c15d13cad1054d4426c1aa531e319d-us20"
   }
 
+//-----
   const request = https.request(url, options, function(response){
+
+    if (response.statusCode === 200) {
+      res.sendFile(__dirname + "/success.html");
+    } else {
+      res.sendFile(__dirname + "/failure.html");
+    }
+
     response.on("data", function(data){
       console.log(JSON.parse(data));
-    })
-  })
+    });
+  });
 
   request.write(jsonData);
   request.end();
 
 });
+
+app.post("/failure", function(req, res){
+  res.redirect("/")
+})
 
 app.listen(3000, function(){
   console.log("Server is running on port 3000")
